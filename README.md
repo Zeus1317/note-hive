@@ -14,7 +14,10 @@
 
 ## Screenshots
 
-(Add your own screenshots here)
+![Screenshot 2025-05-21 105954](https://github.com/user-attachments/assets/b2740d4b-7623-4400-9217-c6e447b8736a)
+
+![Screenshot 2025-05-21 105748](https://github.com/user-attachments/assets/983126f9-b4d2-446f-8e8b-d644b290c612)
+
 
 ## Installation
 
