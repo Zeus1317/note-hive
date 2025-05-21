@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Note</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>My Notes App</header>
+  <div class="container">
+    <h2>Edit Note</h2>
+
+    <form method="POST" action="/notes/<%= note._id %>">
+      <div class="form-group">
+        <input type="text" name="title" id="title" value="<%= note.title %>" placeholder=" " required />
+        <label for="title">Title</label>
+      </div>
+
+      <div class="form-group">
+        <textarea name="content" id="content" rows="8" placeholder=" " required><%= note.content %></textarea>
+        <label for="content">Your note here...</label>
+      </div>
+
+      <!-- New Color Picker Input with pre-filled value -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="color">Note Color</label><br />
+        <input type="color" id="color" name="color" value="<%= note.color %>" style="width: 60px; height: 40px; border: none; cursor: pointer;" />
+      </div>
+
+      <div class="form-buttons" style="margin-top: 25px;">
+        <button type="submit">Update</button>
+        <a href="/notes/<%= note._id %>" class="btn" style="background:#ccc; color:#333;">Cancel</a>
+      </div>
+    </form>
+  </div>
+  <footer>© 2025 Pratham</footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes App - Home</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <select id="themeSelector" class="btn" style="position: fixed; top: 20px; right: 20px; z-index: 999;">
+    <option value="light">☀ Light</option>
+    <option value="dark">🌙 Dark</option>
+    <option value="blue">🔵 Blue</option>
+    <option value="green">🟢 Green</option>
+  </select>
+
+  <header>Note Hive</header>
+
+  <div class="container">
+    <a href="/notes/new" class="btn">+ New Note</a>
+
+    <% if (notes.length === 0) { %>
+      <p>No notes yet. Create one!</p>
+    <% } else { %>
+      <ul id="notesList">
+        <% notes.forEach(note => { %>
+          <li>
+            <a href="/notes/<%= note._id %>"><%= note.title %></a>
+            <button class="pin-btn btn" data-id="<%= note._id %>" title="Pin/Unpin Note">
+              <i class="fa-regular fa-thumbtack"></i>
+            </button>
+            <button class="lock-btn btn" data-id="<%= note._id %>" title="Lock/Unlock Note">
+              <i class="fa-lock-open fa-solid"></i>
+            </button>
+            <button class="invisibleToggle btn" data-id="<%= note._id %>" title="Toggle Invisible Ink">
+              <i class="fa-eye fa-regular"></i>
+            </button>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+
+  <button id="focusToggle" class="btn" style="margin-top:20px;">Focus Mode: Off</button>
+
+  <footer>© 2025 Pratham</footer>
+  <script src="/script.js"></script>
+</body>
+</html>

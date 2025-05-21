@@ -1,0 +1,99 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #007bff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #bb86fc;
+}
+
+[data-theme='blue'] {
+  --bg-color: #e0f7fa;
+  --text-color: #01579b;
+  --accent-color: #0288d1;
+}
+
+[data-theme='green'] {
+  --bg-color: #e8f5e9;
+  --text-color: #1b5e20;
+  --accent-color: #43a047;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 20px;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.locked-note a {
+  font-style: italic;
+  color: gray;
+  pointer-events: none; /* prevent clicking locked note */
+}
+
+.invisible-ink {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.invisible-ink:hover {
+  filter: none;
+}
+
+.pin-btn.pinned {
+  background-color: #ff9800;
+}
+
+.lock-btn i.fa-lock {
+  color: #d32f2f;
+}
+
+.lock-btn i.fa-lock-open {
+  color: #4caf50;
+}

@@ -1,0 +1,14 @@
+<body>
+  <div class="container">
+    <h1><%= note.title %></h1>
+    <p class="note-content"><%= note.content %></p>
+    <a href="/notes/<%= note._id %>/edit" class="btn">Edit</a>
+
+    <form method="POST" action="/notes/<%= note._id %>/delete" style="display:inline;">
+      <button type="submit" class="delete-btn">Delete</button>
+    </form>
+
+    <br><br>
+    <a href="/notes">Back to Notes</a>
+  </div>
+</body>
